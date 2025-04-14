@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mvonbehr_hw1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqn-4F-uBt">
+                                <rect key="frame" x="10" y="117.99999999999999" width="56" height="34.333333333333329"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sort"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6iT-ha-tfh">
+                                <rect key="frame" x="102" y="118" width="189" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umy-xo-ijX">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Ijq-BO-sod"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iHi-on-he2">
+                                        <rect key="frame" x="46" y="0.0" width="143" height="32"/>
+                                        <segments>
+                                            <segment title="16"/>
+                                            <segment title="32"/>
+                                            <segment title="48"/>
+                                            <segment title="64"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Jjy-bz-TMY">
+                                <rect key="frame" x="10" y="167" width="373" height="539"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1u1-K7-bCs">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="254"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XKD-N3-EZQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="32"/>
+                                                <segments>
+                                                    <segment title="Insertion"/>
+                                                    <segment title="Selection"/>
+                                                    <segment title="Quick Sort"/>
+                                                    <segment title="Merge Sort"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-Ll-sFm" userLabel="Chart View">
+                                                <rect key="frame" x="0.0" y="47" width="373" height="207"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-Uj-8nH">
+                                        <rect key="frame" x="0.0" y="285" width="373" height="254"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BoA-Yr-qGH">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="32"/>
+                                                <segments>
+                                                    <segment title="Insertion"/>
+                                                    <segment title="Selection"/>
+                                                    <segment title="Quick Sort"/>
+                                                    <segment title="Merge Sort"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Px7-yK-JDj" userLabel="Chart View">
+                                                <rect key="frame" x="0.0" y="47" width="373" height="207"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oS1-Uj-8nH" firstAttribute="top" secondItem="Jjy-bz-TMY" secondAttribute="top" constant="285" id="boV-xO-2We"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jjy-bz-TMY" secondAttribute="bottom" constant="78" id="H3x-Jk-oPO"/>
+                            <constraint firstItem="Jjy-bz-TMY" firstAttribute="centerX" secondItem="6iT-ha-tfh" secondAttribute="centerX" id="Jem-GJ-nbf"/>
+                            <constraint firstItem="6iT-ha-tfh" firstAttribute="leading" secondItem="Tqn-4F-uBt" secondAttribute="trailing" constant="36" id="NIP-ck-xKK"/>
+                            <constraint firstItem="Jjy-bz-TMY" firstAttribute="top" secondItem="Tqn-4F-uBt" secondAttribute="bottom" constant="14.666666666666686" id="Qyz-TL-1ig"/>
+                            <constraint firstItem="Tqn-4F-uBt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="XKb-Hn-x6K"/>
+                            <constraint firstItem="Tqn-4F-uBt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zpz-Rd-jrg"/>
+                            <constraint firstItem="Jjy-bz-TMY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tqn-4F-uBt" secondAttribute="leading" id="bgK-LA-MQW"/>
+                            <constraint firstItem="6iT-ha-tfh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rcY-Y3-ZOB"/>
+                            <constraint firstItem="6iT-ha-tfh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tyH-ul-mqR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-95.419847328244273" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
