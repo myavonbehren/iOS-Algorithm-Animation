@@ -18,7 +18,7 @@ class ChartView: UIView {
     */
     
     var color : UIColor = .green
-    var spacing : CGFloat = 10
+    var spacing : CGFloat = 4
     var data: [CGFloat] = []
     
     override func draw(_ rect: CGRect) {
