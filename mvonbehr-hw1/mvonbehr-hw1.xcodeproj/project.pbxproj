@@ -7,75 +7,75 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		AC86906A2DACCA960071FF96 /* PBXContainerItemProxy */ = {
+		AC1CE5AB2DACCF08007222D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC86904B2DACCA940071FF96 /* Project object */;
+			containerPortal = AC1CE58C2DACCF07007222D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AC8690522DACCA940071FF96;
-			remoteInfo = hw1;
+			remoteGlobalIDString = AC1CE5932DACCF07007222D3;
+			remoteInfo = "mvonbehr-hw1";
 		};
-		AC8690742DACCA960071FF96 /* PBXContainerItemProxy */ = {
+		AC1CE5B52DACCF08007222D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = AC86904B2DACCA940071FF96 /* Project object */;
+			containerPortal = AC1CE58C2DACCF07007222D3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AC8690522DACCA940071FF96;
-			remoteInfo = hw1;
+			remoteGlobalIDString = AC1CE5932DACCF07007222D3;
+			remoteInfo = "mvonbehr-hw1";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC8690532DACCA940071FF96 /* mvonbehren-hw1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvonbehren-hw1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC8690692DACCA960071FF96 /* mvonbehren-hw1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehren-hw1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC8690732DACCA960071FF96 /* mvonbehren-hw1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehren-hw1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1CE5942DACCF07007222D3 /* mvonbehr-hw1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvonbehr-hw1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1CE5AA2DACCF08007222D3 /* mvonbehr-hw1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-hw1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC1CE5B42DACCF08007222D3 /* mvonbehr-hw1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-hw1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AC86907B2DACCA960071FF96 /* Exceptions for "mvonbehren-hw1" folder in "mvonbehren-hw1" target */ = {
+		AC1CE5BC2DACCF08007222D3 /* Exceptions for "mvonbehr-hw1" folder in "mvonbehr-hw1" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = AC8690522DACCA940071FF96 /* mvonbehren-hw1 */;
+			target = AC1CE5932DACCF07007222D3 /* mvonbehr-hw1 */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AC8690552DACCA940071FF96 /* mvonbehren-hw1 */ = {
+		AC1CE5962DACCF07007222D3 /* mvonbehr-hw1 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				AC86907B2DACCA960071FF96 /* Exceptions for "mvonbehren-hw1" folder in "mvonbehren-hw1" target */,
+				AC1CE5BC2DACCF08007222D3 /* Exceptions for "mvonbehr-hw1" folder in "mvonbehr-hw1" target */,
 			);
-			path = "mvonbehren-hw1";
+			path = "mvonbehr-hw1";
 			sourceTree = "<group>";
 		};
-		AC86906C2DACCA960071FF96 /* mvonbehren-hw1Tests */ = {
+		AC1CE5AD2DACCF08007222D3 /* mvonbehr-hw1Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "mvonbehren-hw1Tests";
+			path = "mvonbehr-hw1Tests";
 			sourceTree = "<group>";
 		};
-		AC8690762DACCA960071FF96 /* mvonbehren-hw1UITests */ = {
+		AC1CE5B72DACCF08007222D3 /* mvonbehr-hw1UITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "mvonbehren-hw1UITests";
+			path = "mvonbehr-hw1UITests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AC8690502DACCA940071FF96 /* Frameworks */ = {
+		AC1CE5912DACCF07007222D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC8690662DACCA960071FF96 /* Frameworks */ = {
+		AC1CE5A72DACCF08007222D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC8690702DACCA960071FF96 /* Frameworks */ = {
+		AC1CE5B12DACCF08007222D3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,22 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC86904A2DACCA940071FF96 = {
+		AC1CE58B2DACCF07007222D3 = {
 			isa = PBXGroup;
 			children = (
-				AC8690552DACCA940071FF96 /* mvonbehren-hw1 */,
-				AC86906C2DACCA960071FF96 /* mvonbehren-hw1Tests */,
-				AC8690762DACCA960071FF96 /* mvonbehren-hw1UITests */,
-				AC8690542DACCA940071FF96 /* Products */,
+				AC1CE5962DACCF07007222D3 /* mvonbehr-hw1 */,
+				AC1CE5AD2DACCF08007222D3 /* mvonbehr-hw1Tests */,
+				AC1CE5B72DACCF08007222D3 /* mvonbehr-hw1UITests */,
+				AC1CE5952DACCF07007222D3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AC8690542DACCA940071FF96 /* Products */ = {
+		AC1CE5952DACCF07007222D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC8690532DACCA940071FF96 /* mvonbehren-hw1.app */,
-				AC8690692DACCA960071FF96 /* mvonbehren-hw1Tests.xctest */,
-				AC8690732DACCA960071FF96 /* mvonbehren-hw1UITests.xctest */,
+				AC1CE5942DACCF07007222D3 /* mvonbehr-hw1.app */,
+				AC1CE5AA2DACCF08007222D3 /* mvonbehr-hw1Tests.xctest */,
+				AC1CE5B42DACCF08007222D3 /* mvonbehr-hw1UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,134 +108,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC8690522DACCA940071FF96 /* mvonbehren-hw1 */ = {
+		AC1CE5932DACCF07007222D3 /* mvonbehr-hw1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC86907C2DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1" */;
+			buildConfigurationList = AC1CE5BD2DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1" */;
 			buildPhases = (
-				AC86904F2DACCA940071FF96 /* Sources */,
-				AC8690502DACCA940071FF96 /* Frameworks */,
-				AC8690512DACCA940071FF96 /* Resources */,
+				AC1CE5902DACCF07007222D3 /* Sources */,
+				AC1CE5912DACCF07007222D3 /* Frameworks */,
+				AC1CE5922DACCF07007222D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				AC8690552DACCA940071FF96 /* mvonbehren-hw1 */,
+				AC1CE5962DACCF07007222D3 /* mvonbehr-hw1 */,
 			);
-			name = "mvonbehren-hw1";
+			name = "mvonbehr-hw1";
 			packageProductDependencies = (
 			);
-			productName = hw1;
-			productReference = AC8690532DACCA940071FF96 /* mvonbehren-hw1.app */;
+			productName = "mvonbehr-hw1";
+			productReference = AC1CE5942DACCF07007222D3 /* mvonbehr-hw1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AC8690682DACCA960071FF96 /* mvonbehren-hw1Tests */ = {
+		AC1CE5A92DACCF08007222D3 /* mvonbehr-hw1Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC8690812DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1Tests" */;
+			buildConfigurationList = AC1CE5C22DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1Tests" */;
 			buildPhases = (
-				AC8690652DACCA960071FF96 /* Sources */,
-				AC8690662DACCA960071FF96 /* Frameworks */,
-				AC8690672DACCA960071FF96 /* Resources */,
+				AC1CE5A62DACCF08007222D3 /* Sources */,
+				AC1CE5A72DACCF08007222D3 /* Frameworks */,
+				AC1CE5A82DACCF08007222D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC86906B2DACCA960071FF96 /* PBXTargetDependency */,
+				AC1CE5AC2DACCF08007222D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AC86906C2DACCA960071FF96 /* mvonbehren-hw1Tests */,
+				AC1CE5AD2DACCF08007222D3 /* mvonbehr-hw1Tests */,
 			);
-			name = "mvonbehren-hw1Tests";
+			name = "mvonbehr-hw1Tests";
 			packageProductDependencies = (
 			);
-			productName = hw1Tests;
-			productReference = AC8690692DACCA960071FF96 /* mvonbehren-hw1Tests.xctest */;
+			productName = "mvonbehr-hw1Tests";
+			productReference = AC1CE5AA2DACCF08007222D3 /* mvonbehr-hw1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AC8690722DACCA960071FF96 /* mvonbehren-hw1UITests */ = {
+		AC1CE5B32DACCF08007222D3 /* mvonbehr-hw1UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC8690842DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1UITests" */;
+			buildConfigurationList = AC1CE5C52DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1UITests" */;
 			buildPhases = (
-				AC86906F2DACCA960071FF96 /* Sources */,
-				AC8690702DACCA960071FF96 /* Frameworks */,
-				AC8690712DACCA960071FF96 /* Resources */,
+				AC1CE5B02DACCF08007222D3 /* Sources */,
+				AC1CE5B12DACCF08007222D3 /* Frameworks */,
+				AC1CE5B22DACCF08007222D3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC8690752DACCA960071FF96 /* PBXTargetDependency */,
+				AC1CE5B62DACCF08007222D3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				AC8690762DACCA960071FF96 /* mvonbehren-hw1UITests */,
+				AC1CE5B72DACCF08007222D3 /* mvonbehr-hw1UITests */,
 			);
-			name = "mvonbehren-hw1UITests";
+			name = "mvonbehr-hw1UITests";
 			packageProductDependencies = (
 			);
-			productName = hw1UITests;
-			productReference = AC8690732DACCA960071FF96 /* mvonbehren-hw1UITests.xctest */;
+			productName = "mvonbehr-hw1UITests";
+			productReference = AC1CE5B42DACCF08007222D3 /* mvonbehr-hw1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AC86904B2DACCA940071FF96 /* Project object */ = {
+		AC1CE58C2DACCF07007222D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					AC8690522DACCA940071FF96 = {
+					AC1CE5932DACCF07007222D3 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					AC8690682DACCA960071FF96 = {
+					AC1CE5A92DACCF08007222D3 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = AC8690522DACCA940071FF96;
+						TestTargetID = AC1CE5932DACCF07007222D3;
 					};
-					AC8690722DACCA960071FF96 = {
+					AC1CE5B32DACCF08007222D3 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = AC8690522DACCA940071FF96;
+						TestTargetID = AC1CE5932DACCF07007222D3;
 					};
 				};
 			};
-			buildConfigurationList = AC86904E2DACCA940071FF96 /* Build configuration list for PBXProject "mvonbehren-hw1" */;
+			buildConfigurationList = AC1CE58F2DACCF07007222D3 /* Build configuration list for PBXProject "mvonbehr-hw1" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = AC86904A2DACCA940071FF96;
+			mainGroup = AC1CE58B2DACCF07007222D3;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = AC8690542DACCA940071FF96 /* Products */;
+			productRefGroup = AC1CE5952DACCF07007222D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC8690522DACCA940071FF96 /* mvonbehren-hw1 */,
-				AC8690682DACCA960071FF96 /* mvonbehren-hw1Tests */,
-				AC8690722DACCA960071FF96 /* mvonbehren-hw1UITests */,
+				AC1CE5932DACCF07007222D3 /* mvonbehr-hw1 */,
+				AC1CE5A92DACCF08007222D3 /* mvonbehr-hw1Tests */,
+				AC1CE5B32DACCF08007222D3 /* mvonbehr-hw1UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AC8690512DACCA940071FF96 /* Resources */ = {
+		AC1CE5922DACCF07007222D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC8690672DACCA960071FF96 /* Resources */ = {
+		AC1CE5A82DACCF08007222D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC8690712DACCA960071FF96 /* Resources */ = {
+		AC1CE5B22DACCF08007222D3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,21 +245,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AC86904F2DACCA940071FF96 /* Sources */ = {
+		AC1CE5902DACCF07007222D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC8690652DACCA960071FF96 /* Sources */ = {
+		AC1CE5A62DACCF08007222D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC86906F2DACCA960071FF96 /* Sources */ = {
+		AC1CE5B02DACCF08007222D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,28 +269,29 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AC86906B2DACCA960071FF96 /* PBXTargetDependency */ = {
+		AC1CE5AC2DACCF08007222D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC8690522DACCA940071FF96 /* mvonbehren-hw1 */;
-			targetProxy = AC86906A2DACCA960071FF96 /* PBXContainerItemProxy */;
+			target = AC1CE5932DACCF07007222D3 /* mvonbehr-hw1 */;
+			targetProxy = AC1CE5AB2DACCF08007222D3 /* PBXContainerItemProxy */;
 		};
-		AC8690752DACCA960071FF96 /* PBXTargetDependency */ = {
+		AC1CE5B62DACCF08007222D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AC8690522DACCA940071FF96 /* mvonbehren-hw1 */;
-			targetProxy = AC8690742DACCA960071FF96 /* PBXContainerItemProxy */;
+			target = AC1CE5932DACCF07007222D3 /* mvonbehr-hw1 */;
+			targetProxy = AC1CE5B52DACCF08007222D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		AC86907D2DACCA960071FF96 /* Debug */ = {
+		AC1CE5BE2DACCF08007222D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = hw1/Info.plist;
+				INFOPLIST_FILE = "mvonbehr-hw1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -301,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,15 +310,16 @@
 			};
 			name = Debug;
 		};
-		AC86907E2DACCA960071FF96 /* Release */ = {
+		AC1CE5BF2DACCF08007222D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = hw1/Info.plist;
+				INFOPLIST_FILE = "mvonbehr-hw1/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,7 +338,7 @@
 			};
 			name = Release;
 		};
-		AC86907F2DACCA960071FF96 /* Debug */ = {
+		AC1CE5C02DACCF08007222D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,6 +373,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -399,7 +402,7 @@
 			};
 			name = Debug;
 		};
-		AC8690802DACCA960071FF96 /* Release */ = {
+		AC1CE5C12DACCF08007222D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -434,6 +437,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -455,114 +459,118 @@
 			};
 			name = Release;
 		};
-		AC8690822DACCA960071FF96 /* Debug */ = {
+		AC1CE5C32DACCF08007222D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvonbehren-hw1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mvonbehren-hw1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvonbehr-hw1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mvonbehr-hw1";
 			};
 			name = Debug;
 		};
-		AC8690832DACCA960071FF96 /* Release */ = {
+		AC1CE5C42DACCF08007222D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvonbehren-hw1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mvonbehren-hw1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mvonbehr-hw1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mvonbehr-hw1";
 			};
 			name = Release;
 		};
-		AC8690852DACCA960071FF96 /* Debug */ = {
+		AC1CE5C62DACCF08007222D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = hw1;
+				TEST_TARGET_NAME = "mvonbehr-hw1";
 			};
 			name = Debug;
 		};
-		AC8690862DACCA960071FF96 /* Release */ = {
+		AC1CE5C72DACCF08007222D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6LYUN3ZU6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mvonbehren.hw1UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mvonbehren.mvonbehr-hw1UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = hw1;
+				TEST_TARGET_NAME = "mvonbehr-hw1";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AC86904E2DACCA940071FF96 /* Build configuration list for PBXProject "mvonbehren-hw1" */ = {
+		AC1CE58F2DACCF07007222D3 /* Build configuration list for PBXProject "mvonbehr-hw1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC86907F2DACCA960071FF96 /* Debug */,
-				AC8690802DACCA960071FF96 /* Release */,
+				AC1CE5C02DACCF08007222D3 /* Debug */,
+				AC1CE5C12DACCF08007222D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC86907C2DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1" */ = {
+		AC1CE5BD2DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC86907D2DACCA960071FF96 /* Debug */,
-				AC86907E2DACCA960071FF96 /* Release */,
+				AC1CE5BE2DACCF08007222D3 /* Debug */,
+				AC1CE5BF2DACCF08007222D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC8690812DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1Tests" */ = {
+		AC1CE5C22DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC8690822DACCA960071FF96 /* Debug */,
-				AC8690832DACCA960071FF96 /* Release */,
+				AC1CE5C32DACCF08007222D3 /* Debug */,
+				AC1CE5C42DACCF08007222D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC8690842DACCA960071FF96 /* Build configuration list for PBXNativeTarget "mvonbehren-hw1UITests" */ = {
+		AC1CE5C52DACCF08007222D3 /* Build configuration list for PBXNativeTarget "mvonbehr-hw1UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AC8690852DACCA960071FF96 /* Debug */,
-				AC8690862DACCA960071FF96 /* Release */,
+				AC1CE5C62DACCF08007222D3 /* Debug */,
+				AC1CE5C72DACCF08007222D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = AC86904B2DACCA940071FF96 /* Project object */;
+	rootObject = AC1CE58C2DACCF07007222D3 /* Project object */;
 }

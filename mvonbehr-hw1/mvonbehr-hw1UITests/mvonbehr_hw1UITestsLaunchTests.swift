@@ -1,13 +1,13 @@
 //
-//  hw1UITestsLaunchTests.swift
-//  hw1UITests
+//  mvonbehr_hw1UITestsLaunchTests.swift
+//  mvonbehr-hw1UITests
 //
-//  Created by Mya Von Behren on 4/13/25.
+//  Created by Mya Von Behren on 4/14/25.
 //
 
 import XCTest
 
-final class hw1UITestsLaunchTests: XCTestCase {
+final class mvonbehr_hw1UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

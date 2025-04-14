@@ -1,13 +1,13 @@
 //
-//  hw1UITests.swift
-//  hw1UITests
+//  mvonbehr_hw1UITests.swift
+//  mvonbehr-hw1UITests
 //
-//  Created by Mya Von Behren on 4/13/25.
+//  Created by Mya Von Behren on 4/14/25.
 //
 
 import XCTest
 
-final class hw1UITests: XCTestCase {
+final class mvonbehr_hw1UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
