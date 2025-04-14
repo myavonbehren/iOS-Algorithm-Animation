@@ -41,6 +41,9 @@
                                             <segment title="48"/>
                                             <segment title="64"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="sizeSegmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qvj-cz-5z8"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
