@@ -19,25 +19,36 @@ class ViewController: UIViewController {
     var array32 = Array(1...32)
     var array48 = Array(1...48)
     var array64 = Array(1...64)
-    
-    var array2 = Array(1...3)
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       
-        let maxValue = CGFloat(array2.max() ?? 100)
-        let percentageData = array2.map { CGFloat($0) / maxValue * 100 }
-        
-        self.chartView.data = percentageData.map{$0}
-        debugPrint(self.chartView.data)
-
-        self.chartView.setNeedsDisplay()
         
     }
     
     @IBAction func sizeSegmentChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.chartView.data = setBarData(array16.map{CGFloat($0)})
+            self.chartView.setNeedsDisplay()
+        case 1:
+            self.chartView.data = setBarData(array32.map{CGFloat($0)})
+            self.chartView.setNeedsDisplay()
+        case 2:
+            self.chartView.data = setBarData(array48.map{CGFloat($0)})
+            self.chartView.setNeedsDisplay()
+        case 3:
+            self.chartView.data = setBarData(array64.map{CGFloat($0)})
+            self.chartView.setNeedsDisplay()
+        default:
+            return
+        }
         
+    }
+    
+    func setBarData(_ data: [CGFloat]) -> [CGFloat] {
+        let maxValue = data.max() ?? 100
+        return data.map { CGFloat($0) / maxValue * 100 }
     }
     
 
