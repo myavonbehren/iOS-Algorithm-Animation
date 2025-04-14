@@ -17,31 +17,33 @@ class ChartView: UIView {
     }
     */
     
-    var percentage: CGFloat = 0
-    var percentage2: CGFloat = 0
     var color : UIColor = .green
+    var spacing : CGFloat = 10
+    var data: [CGFloat] = []
     
     override func draw(_ rect: CGRect) {
         if let context = UIGraphicsGetCurrentContext( ) {
-            let barWidth: CGFloat = self.frame.width / 2
+            if data.isEmpty { return }
             
-            let fillHeight = self.frame.height * (self.percentage / 100)
+            let barCount = CGFloat(data.count)
+            let totalSpacing = spacing * (barCount - 1)
+            let barWidth = (self.frame.width - totalSpacing) / barCount
             
+            
+            context.setFillColor(self.color.cgColor)
+
+            
+            for (index, value) in data.enumerated( ) {
+                let fillHeight = self.frame.height * (value / 100)
+                let xPosition = CGFloat(index) * (barWidth + spacing)
+                
+                context.fill(CGRect(x: xPosition,
+                                    y: self.frame.height - fillHeight,
+                                    width: barWidth,
+                                    height: fillHeight))
+            }
         
-            context.setFillColor(self.color.cgColor)
-            context.fill(CGRect(x: 0,
-                                y: self.frame.height - fillHeight,
-                                width: barWidth,
-                                height: fillHeight))
-            
-            let fillHeight2 = self.frame.height * (self.percentage2 / 100)
-            context.setFillColor(self.color.cgColor)
-            context.fill(CGRect(x: barWidth,
-                                y: self.frame.height - fillHeight2,
-                                width: barWidth,
-                                height: fillHeight2))
         }
-        
         
     }
 
