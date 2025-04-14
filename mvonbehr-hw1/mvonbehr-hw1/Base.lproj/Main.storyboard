@@ -59,7 +59,7 @@
                                                     <segment title="Merge Sort"/>
                                                 </segments>
                                             </segmentedControl>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-Ll-sFm" userLabel="Chart View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-Ll-sFm" userLabel="Chart View" customClass="ChartView" customModule="mvonbehr_hw1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="47" width="373" height="207"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             </view>
@@ -103,6 +103,13 @@
                             <constraint firstItem="6iT-ha-tfh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tyH-ul-mqR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="algorithmPickerBottom" destination="BoA-Yr-qGH" id="hEA-pg-3oM"/>
+                        <outlet property="algorithmPickerTop" destination="XKD-N3-EZQ" id="KFp-ZH-UaD"/>
+                        <outlet property="chartView" destination="RDg-Ll-sFm" id="pDX-0B-VYh"/>
+                        <outlet property="sizeSegControl" destination="iHi-on-he2" id="3hY-qI-wUo"/>
+                        <outlet property="sortButton" destination="Tqn-4F-uBt" id="GMI-vY-PPo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
