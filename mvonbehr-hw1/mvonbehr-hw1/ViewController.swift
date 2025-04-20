@@ -18,16 +18,10 @@ class ViewController: UIViewController {
     
     var queue: DispatchQueue = DispatchQueue(label: "")
     
-    var currArr: [CGFloat] = []
+    var topArr: [CGFloat] = []
+    var bottomArr: [CGFloat] = []
     
-    var array16 = Array(1...16).shuffled()
-    var array32 = Array(1...32).shuffled()
-    var array48 = Array(1...48).shuffled()
-    var array64 = Array(1...64).shuffled()
-    
-    var test : SortingAlgorithms!
-    
-        
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,21 +43,28 @@ class ViewController: UIViewController {
         default: size = 16
         }
         
-        
+        topArr = Array(1...size).shuffled().map{CGFloat($0)}
+        bottomArr = Array(1...size).shuffled().map{CGFloat($0)}
+
+        topchartView.data = setBarData(topArr)
+        bottomChartView.data = setBarData(bottomArr)
+        topchartView.setNeedsDisplay()
+        bottomChartView.setNeedsDisplay()
     }
     
     func setBarData(_ data: [CGFloat]) -> [CGFloat] {
         let maxValue = data.max() ?? 100
-        return data.map { CGFloat($0) / maxValue * 100 }
+        return data.map { $0 / maxValue * 100 }
     }
     
     
     @IBAction func sort(_ sender: UIButton) {
+        /*
         switch algorithmPickerTop.selectedSegmentIndex {
         case 0:
             test.insertionSort(array16, )
         
-        }
+        }*/
     }
     
     
