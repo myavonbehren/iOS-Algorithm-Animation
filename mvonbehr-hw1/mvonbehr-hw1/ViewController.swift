@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var algorithmPickerTop: UISegmentedControl!
     @IBOutlet weak var algorithmPickerBottom: UISegmentedControl!
     
-    var queue: DispatchQueue = DispatchQueue(label: "")
+    var queue: DispatchQueue = DispatchQueue(label: "sort", qos: .background)
     
     var topArr: [CGFloat] = []
     var bottomArr: [CGFloat] = []
@@ -57,20 +57,36 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
-        let topAlgo = SortingAlgorithms()
-        topAlgo.insertionSort(array: self.topArr) { updatedArray in
-            DispatchQueue.main.async {
-                self.topArr = updatedArray
-                self.topchartView.data = self.setBarData(self.topArr)
-                self.topchartView.setNeedsDisplay()
-                
-                
+        queue.async {
+            self.insertionSort(array: self.topArr) { updatedArray in
+                DispatchQueue.main.async {
+                    self.topArr = updatedArray
+                    self.updateUI(self.topArr)
+                }
             }
         }
     }
     
-    func updateUI(){
+    func updateUI(_ array: [CGFloat]){
+        self.topchartView.data = self.setBarData(array)
+        self.topchartView.setNeedsDisplay()
+    }
+    
+    func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
+        var result = array
         
+        for index in result.indices {
+            let element = result[index]
+            
+            for innerIndex in 0...index {
+                let innerElement = result[innerIndex]
+                if innerElement > element {
+                    result.swapAt(innerIndex, index)
+                    Thread.sleep(forTimeInterval: 0.01)
+                    onSwap(result)
+                }
+            }
+        }
     }
     
 }
