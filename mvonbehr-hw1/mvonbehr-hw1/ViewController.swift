@@ -27,8 +27,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.bottomChartView.color = .orange
         sizeSegmentChanged(sizeSegControl)
-        
-        
     }
     
     
@@ -59,14 +57,21 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
-        /*
-        switch algorithmPickerTop.selectedSegmentIndex {
-        case 0:
-            test.insertionSort(array16, )
-        
-        }*/
+        let topAlgo = SortingAlgorithms()
+        topAlgo.insertionSort(array: self.topArr) { updatedArray in
+            DispatchQueue.main.async {
+                self.topArr = updatedArray
+                self.topchartView.data = self.setBarData(self.topArr)
+                self.topchartView.setNeedsDisplay()
+                
+                
+            }
+        }
     }
     
+    func updateUI(){
+        
+    }
     
 }
 

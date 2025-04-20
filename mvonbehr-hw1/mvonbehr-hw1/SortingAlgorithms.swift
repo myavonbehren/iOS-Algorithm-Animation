@@ -9,7 +9,7 @@ import Foundation
 
 class SortingAlgorithms {
     
-    func insertionSort(array: [Int], onSwap: (([Int]) -> Void)) {
+    func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
         var result = array
         
         for index in result.indices {
