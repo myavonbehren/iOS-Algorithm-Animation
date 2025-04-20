@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AC4C13892DB4B78700AD0A5C /* SortingAlgorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C13882DB4B78700AD0A5C /* SortingAlgorithms.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		AC1CE5AB2DACCF08007222D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		AC1CE5942DACCF07007222D3 /* mvonbehr-hw1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvonbehr-hw1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1CE5AA2DACCF08007222D3 /* mvonbehr-hw1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-hw1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC1CE5B42DACCF08007222D3 /* mvonbehr-hw1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvonbehr-hw1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4C13882DB4B78700AD0A5C /* SortingAlgorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SortingAlgorithms.swift; path = "mvonbehr-hw1/SortingAlgorithms.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		AC1CE58B2DACCF07007222D3 = {
 			isa = PBXGroup;
 			children = (
+				AC4C13882DB4B78700AD0A5C /* SortingAlgorithms.swift */,
 				AC1CE5962DACCF07007222D3 /* mvonbehr-hw1 */,
 				AC1CE5AD2DACCF08007222D3 /* mvonbehr-hw1Tests */,
 				AC1CE5B72DACCF08007222D3 /* mvonbehr-hw1UITests */,
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4C13892DB4B78700AD0A5C /* SortingAlgorithms.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
