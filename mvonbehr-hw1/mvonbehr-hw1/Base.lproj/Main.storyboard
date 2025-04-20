@@ -20,6 +20,9 @@
                                 <rect key="frame" x="10" y="117.99999999999999" width="56" height="34.333333333333329"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sort"/>
+                                <connections>
+                                    <action selector="sort:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0oD-I2-S5w"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6iT-ha-tfh">
                                 <rect key="frame" x="102" y="118" width="189" height="31"/>

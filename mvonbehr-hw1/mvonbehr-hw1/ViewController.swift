@@ -16,10 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var algorithmPickerTop: UISegmentedControl!
     @IBOutlet weak var algorithmPickerBottom: UISegmentedControl!
     
+    var queue: DispatchQueue = DispatchQueue(label: "")
+    
+    var currArr: [CGFloat] = []
+    
     var array16 = Array(1...16).shuffled()
     var array32 = Array(1...32).shuffled()
     var array48 = Array(1...48).shuffled()
     var array64 = Array(1...64).shuffled()
+    
+    var test : SortingAlgorithms!
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,31 +37,18 @@ class ViewController: UIViewController {
         
     }
     
+    
     @IBAction func sizeSegmentChanged(_ sender: UISegmentedControl) {
+        let size: Int
+        
         switch sender.selectedSegmentIndex {
-        case 0:
-            self.topchartView.data = setBarData(array16.map{CGFloat($0)})
-            self.topchartView.setNeedsDisplay()
-            self.bottomChartView.data = setBarData(array16.map{CGFloat($0)})
-            self.bottomChartView.setNeedsDisplay()
-        case 1:
-            self.topchartView.data = setBarData(array32.map{CGFloat($0)})
-            self.topchartView.setNeedsDisplay()
-            self.bottomChartView.data = setBarData(array32.map{CGFloat($0)})
-            self.bottomChartView.setNeedsDisplay()
-        case 2:
-            self.topchartView.data = setBarData(array48.map{CGFloat($0)})
-            self.topchartView.setNeedsDisplay()
-            self.bottomChartView.data = setBarData(array48.map{CGFloat($0)})
-            self.bottomChartView.setNeedsDisplay()
-        case 3:
-            self.topchartView.data = setBarData(array64.map{CGFloat($0)})
-            self.topchartView.setNeedsDisplay()
-            self.bottomChartView.data = setBarData(array64.map{CGFloat($0)})
-            self.bottomChartView.setNeedsDisplay()
-        default:
-            return
+        case 0: size = 16
+        case 1: size = 32
+        case 2: size = 48
+        case 3: size = 64
+        default: size = 16
         }
+        
         
     }
     
@@ -62,6 +56,16 @@ class ViewController: UIViewController {
         let maxValue = data.max() ?? 100
         return data.map { CGFloat($0) / maxValue * 100 }
     }
+    
+    
+    @IBAction func sort(_ sender: UIButton) {
+        switch algorithmPickerTop.selectedSegmentIndex {
+        case 0:
+            test.insertionSort(array16, )
+        
+        }
+    }
+    
     
 }
 
