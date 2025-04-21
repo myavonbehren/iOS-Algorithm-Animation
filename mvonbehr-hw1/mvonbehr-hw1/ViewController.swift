@@ -57,20 +57,30 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
+        let algorithm: (([CGFloat], (([CGFloat]) -> Void)) -> Void)
+        
+        switch self.algorithmPickerTop.selectedSegmentIndex {
+            case 0: algorithm = insertionSort
+            case 1: algorithm = selectionSort
+            default: algorithm = insertionSort
+        }
+        
         let maxPossibleValue = CGFloat(topArr.count)
+        
         let normalizedTopArr = topArr.map { $0 / maxPossibleValue * 100 }
             topchartView.data = normalizedTopArr
             topchartView.setNeedsDisplay()
         
         queue.async {
-         self.insertionSort(array: self.topArr) { updatedArray in
-             DispatchQueue.main.async {
-                 self.topArr = updatedArray
-                 let normalizedArray = updatedArray.map { $0 / maxPossibleValue * 100 }
-                 self.topchartView.data = normalizedArray
-                 self.topchartView.setNeedsDisplay()
-             }
-         }
+            algorithm(self.topArr) { updatedArray in
+                     DispatchQueue.main.async {
+                         self.topArr = updatedArray
+                         let normalizedArray = updatedArray.map { $0 / maxPossibleValue * 100 }
+                         self.topchartView.data = normalizedArray
+                         self.topchartView.setNeedsDisplay()
+                     }
+                 }
+         
      }
     }
     
@@ -86,7 +96,6 @@ class ViewController: UIViewController {
                  result[j] = result[j-1]
                  j -= 1
                  Thread.sleep(forTimeInterval: 0.01)
-                 debugPrint(result)
                  onSwap(result)
              }
              
@@ -97,26 +106,97 @@ class ViewController: UIViewController {
          }
      }
     
+    func selectionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
+        var result = array
+        let size = array.count
+        
+        for index in 0..<size-1 {
+            var minIndex = index
+            
+            for j in index+1..<size {
+                if result[j] < result[minIndex] {
+                    minIndex = j
+                }
+            }
+            
+            if minIndex != index {
+                result.swapAt(index, minIndex)
+                Thread.sleep(forTimeInterval: 0.1)
+                onSwap(result)
+            }
+            
+        }
+        
+        /*
+         selectionSort(array, size)
+           for i from 0 to size - 1 do
+             set i as the index of the current minimum
+             for j from i + 1 to size - 1 do
+               if array[j] < array[current minimum]
+                 set j as the new current minimum index
+             if current minimum is not i
+               swap array[i] with array[current minimum]
+         end selectionSort
+         */
+    }
+    
     /*
-     func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
-         var result = array
- 
-         for index in result.indices {
-             let element = result[index]
-             
-             for innerIndex in 0...index {
-                 let innerElement = result[innerIndex]
-                 if innerElement > element {
-                     debugPrint(result)
-                     result.swapAt(innerIndex, index)
-                     Thread.sleep(forTimeInterval: 0.2)
-                     onSwap(result)
-                 }
-             }
-         }
-     }
+     
+     quickSort(array, leftmostIndex, rightmostIndex)
+       if (leftmostIndex < rightmostIndex)
+         pivotIndex <- partition(array,leftmostIndex, rightmostIndex)
+         quickSort(array, leftmostIndex, pivotIndex - 1)
+         quickSort(array, pivotIndex, rightmostIndex)
+
+     partition(array, leftmostIndex, rightmostIndex)
+       set rightmostIndex as pivotIndex
+       storeIndex <- leftmostIndex - 1
+       for i <- leftmostIndex + 1 to rightmostIndex
+       if element[i] < pivotElement
+         swap element[i] and element[storeIndex]
+         storeIndex++
+       swap pivotElement and element[storeIndex+1]
+     return storeIndex + 1
      */
     
+    /*
+     def mergeSort(array):
+         if len(array) > 1:
+
+             #  r is the point where the array is divided into two subarrays
+             r = len(array)//2
+             L = array[:r]
+             M = array[r:]
+
+             # Sort the two halves
+             mergeSort(L)
+             mergeSort(M)
+
+             i = j = k = 0
+
+             # Until we reach either end of either L or M, pick larger among
+             # elements L and M and place them in the correct position at A[p..r]
+             while i < len(L) and j < len(M):
+                 if L[i] < M[j]:
+                     array[k] = L[i]
+                     i += 1
+                 else:
+                     array[k] = M[j]
+                     j += 1
+                 k += 1
+
+             # When we run out of elements in either L or M,
+             # pick up the remaining elements and put in A[p..r]
+             while i < len(L):
+                 array[k] = L[i]
+                 i += 1
+                 k += 1
+
+             while j < len(M):
+                 array[k] = M[j]
+                 j += 1
+                 k += 1
+     */
     
     
     
