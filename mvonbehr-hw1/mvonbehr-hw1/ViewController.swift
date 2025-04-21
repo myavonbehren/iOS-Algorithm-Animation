@@ -57,31 +57,68 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
-        let algorithm: (([CGFloat], (([CGFloat]) -> Void)) -> Void)
+        sortButton.isEnabled = false
         
-        switch self.algorithmPickerTop.selectedSegmentIndex {
-            case 0: algorithm = insertionSort
-            case 1: algorithm = selectionSort
-            default: algorithm = insertionSort
-        }
+        let selectedTop = algorithmPickerTop.selectedSegmentIndex
+        let selectedBottom = algorithmPickerBottom.selectedSegmentIndex
         
-        let maxPossibleValue = CGFloat(topArr.count)
+        let maxPossibleValueBottom = CGFloat(bottomArr.count)
+        let maxPossibleValueTop = CGFloat(topArr.count)
         
-        let normalizedTopArr = topArr.map { $0 / maxPossibleValue * 100 }
-            topchartView.data = normalizedTopArr
-            topchartView.setNeedsDisplay()
+        let normalizedTopArr = topArr.map { $0 / maxPossibleValueTop * 100 }
+        let normalizedBottomArr = bottomArr.map { $0 / maxPossibleValueBottom * 100 }
+        
+        topchartView.data = normalizedTopArr
+        topchartView.setNeedsDisplay()
+        
+        bottomChartView.data = normalizedBottomArr
+        bottomChartView.setNeedsDisplay()
         
         queue.async {
-            algorithm(self.topArr) { updatedArray in
-                     DispatchQueue.main.async {
-                         self.topArr = updatedArray
-                         let normalizedArray = updatedArray.map { $0 / maxPossibleValue * 100 }
-                         self.topchartView.data = normalizedArray
-                         self.topchartView.setNeedsDisplay()
-                     }
-                 }
-         
-     }
+            
+            let topOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
+                self.topArr = updatedArray
+                let normalizedArray = updatedArray.map { $0 / maxPossibleValueTop * 100 }
+                self.topchartView.data = normalizedArray
+                self.topchartView.setNeedsDisplay()
+                }
+            }
+            
+            switch selectedTop {
+                case 0:
+                    self.insertionSort(array: self.topArr, onSwap: topOnSwap)
+                case 1:
+                    self.selectionSort(array: self.topArr, onSwap: topOnSwap)
+                case 2:
+                    var qsArr = self.topArr
+                    self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: topOnSwap)
+                default: self.insertionSort(array: self.topArr, onSwap: topOnSwap)
+            }
+            
+            let bottomOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
+                self.bottomArr = updatedArray
+                let normalizedArray = updatedArray.map { $0 / maxPossibleValueBottom * 100 }
+                self.bottomChartView.data = normalizedArray
+                self.bottomChartView.setNeedsDisplay()
+                }
+            }
+            
+            switch selectedBottom {
+            case 0:
+                self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+            case 1:
+                self.selectionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+            case 2:
+                var qsArr = self.bottomArr
+                self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: bottomOnSwap)
+            default: self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+            }
+            
+        }
+        sortButton.isEnabled = true
+        
+        
+        
     }
     
 
@@ -124,40 +161,37 @@ class ViewController: UIViewController {
                 Thread.sleep(forTimeInterval: 0.1)
                 onSwap(result)
             }
-            
         }
-        
-        /*
-         selectionSort(array, size)
-           for i from 0 to size - 1 do
-             set i as the index of the current minimum
-             for j from i + 1 to size - 1 do
-               if array[j] < array[current minimum]
-                 set j as the new current minimum index
-             if current minimum is not i
-               swap array[i] with array[current minimum]
-         end selectionSort
-         */
     }
     
-    /*
-     
-     quickSort(array, leftmostIndex, rightmostIndex)
-       if (leftmostIndex < rightmostIndex)
-         pivotIndex <- partition(array,leftmostIndex, rightmostIndex)
-         quickSort(array, leftmostIndex, pivotIndex - 1)
-         quickSort(array, pivotIndex, rightmostIndex)
-
-     partition(array, leftmostIndex, rightmostIndex)
-       set rightmostIndex as pivotIndex
-       storeIndex <- leftmostIndex - 1
-       for i <- leftmostIndex + 1 to rightmostIndex
-       if element[i] < pivotElement
-         swap element[i] and element[storeIndex]
-         storeIndex++
-       swap pivotElement and element[storeIndex+1]
-     return storeIndex + 1
-     */
+    func partition(array: inout [CGFloat], low: Int, high: Int, onSwap: (([CGFloat]) -> Void)) -> Int {
+        let pivot = array[high]
+        var index = low - 1
+        
+        for j in low..<high {
+            if array [j] <= pivot {
+                index += 1
+                array.swapAt(index, j)
+                Thread.sleep(forTimeInterval: 0.1)
+                onSwap(array)
+            }
+        }
+        array.swapAt(index+1, high)
+        onSwap(array)
+        return index+1
+    }
+    
+    func quickSort(array: inout [CGFloat], low: Int, high: Int, onSwap: (([CGFloat]) -> Void)) {
+        if (low < high) {
+            let pivotIndex = partition(array: &array, low: low, high: high, onSwap: onSwap)
+            quickSort(array: &array, low: low, high: pivotIndex - 1, onSwap: onSwap)
+            quickSort(array: &array, low: pivotIndex + 1, high: high, onSwap: onSwap)
+        }
+    }
+    
+    func mergeSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
+        
+    }
     
     /*
      def mergeSort(array):
