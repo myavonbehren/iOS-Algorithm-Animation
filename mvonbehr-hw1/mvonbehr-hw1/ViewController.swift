@@ -57,21 +57,47 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
+        let maxPossibleValue = CGFloat(topArr.count)
+        let normalizedTopArr = topArr.map { $0 / maxPossibleValue * 100 }
+            topchartView.data = normalizedTopArr
+            topchartView.setNeedsDisplay()
+        
         queue.async {
          self.insertionSort(array: self.topArr) { updatedArray in
              DispatchQueue.main.async {
                  self.topArr = updatedArray
-                 self.updateUI(self.topArr)
+                 let normalizedArray = updatedArray.map { $0 / maxPossibleValue * 100 }
+                 self.topchartView.data = normalizedArray
+                 self.topchartView.setNeedsDisplay()
              }
          }
      }
     }
     
-    func updateUI(_ array: [CGFloat]){
-         self.topchartView.data = self.setBarData(array)
-         self.topchartView.setNeedsDisplay()
+
+     func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
+         var result = array
+             
+         for index in 1..<result.count {
+             let element = result[index]
+             var j = index
+             
+             while j > 0 && result[j-1] > element {
+                 result[j] = result[j-1]
+                 j -= 1
+                 Thread.sleep(forTimeInterval: 0.01)
+                 debugPrint(result)
+                 onSwap(result)
+             }
+             
+             if j != index {
+                 result[j] = element
+                 onSwap(result)
+             }
+         }
      }
-         
+    
+    /*
      func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
          var result = array
  
@@ -81,13 +107,16 @@ class ViewController: UIViewController {
              for innerIndex in 0...index {
                  let innerElement = result[innerIndex]
                  if innerElement > element {
+                     debugPrint(result)
                      result.swapAt(innerIndex, index)
-                     Thread.sleep(forTimeInterval: 0.01)
+                     Thread.sleep(forTimeInterval: 0.2)
                      onSwap(result)
                  }
              }
          }
      }
+     */
+    
     
     
     
