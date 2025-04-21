@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var algorithmPickerBottom: UISegmentedControl!
     
     var queue: DispatchQueue = DispatchQueue(label: "sort", qos: .background)
+        
+    var topHeights: [CGFloat] = []
+    var topPositions: [Int] = []
     
-    var topArr: [CGFloat] = []
-    var bottomArr: [CGFloat] = []
-    
+    var bottomHeights: [CGFloat] = []
+    var bottomPositions: [Int] = []
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,13 +43,14 @@ class ViewController: UIViewController {
         default: size = 16
         }
         
-        topArr = Array(1...size).shuffled().map{CGFloat($0)}
+        topHeights = Array(1...size).shuffled().map{CGFloat($0)}
+        topPositions = Array(0..<size)
+        
         bottomArr = Array(1...size).shuffled().map{CGFloat($0)}
 
-        topchartView.data = setBarData(topArr)
-        bottomChartView.data = setBarData(bottomArr)
+        topchartView.heights = topHeights
+        topchartView.positions = topPositions
         topchartView.setNeedsDisplay()
-        bottomChartView.setNeedsDisplay()
     }
     
     func setBarData(_ data: [CGFloat]) -> [CGFloat] {
@@ -88,6 +91,8 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
     
 }
 
