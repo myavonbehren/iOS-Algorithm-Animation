@@ -16,13 +16,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var algorithmPickerTop: UISegmentedControl!
     @IBOutlet weak var algorithmPickerBottom: UISegmentedControl!
     
-    var queue: DispatchQueue = DispatchQueue(label: "sort", qos: .background)
-        
-    var topHeights: [CGFloat] = []
-    var topPositions: [Int] = []
+    var queue: DispatchQueue = DispatchQueue(label: "")
     
-    var bottomHeights: [CGFloat] = []
-    var bottomPositions: [Int] = []
+    var topArr: [CGFloat] = []
+    var bottomArr: [CGFloat] = []
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +41,13 @@ class ViewController: UIViewController {
         default: size = 16
         }
         
-        topHeights = Array(1...size).shuffled().map{CGFloat($0)}
-        topPositions = Array(0..<size)
-        
+        topArr = Array(1...size).shuffled().map{CGFloat($0)}
         bottomArr = Array(1...size).shuffled().map{CGFloat($0)}
 
-        topchartView.heights = topHeights
-        topchartView.positions = topPositions
+        topchartView.data = setBarData(topArr)
+        bottomChartView.data = setBarData(bottomArr)
         topchartView.setNeedsDisplay()
+        bottomChartView.setNeedsDisplay()
     }
     
     func setBarData(_ data: [CGFloat]) -> [CGFloat] {
@@ -60,39 +57,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
-        queue.async {
-            self.insertionSort(array: self.topArr) { updatedArray in
-                DispatchQueue.main.async {
-                    self.topArr = updatedArray
-                    self.updateUI(self.topArr)
-                }
+        let topAlgo = SortingAlgorithms()
+        topAlgo.insertionSort(array: self.topArr) { updatedArray in
+            DispatchQueue.main.async {
+                self.topArr = updatedArray
+                self.topchartView.data = self.setBarData(self.topArr)
+                self.topchartView.setNeedsDisplay()
+                
+                
             }
         }
     }
     
-    func updateUI(_ array: [CGFloat]){
-        self.topchartView.data = self.setBarData(array)
-        self.topchartView.setNeedsDisplay()
-    }
-    
-    func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
-        var result = array
-        
-        for index in result.indices {
-            let element = result[index]
-            
-            for innerIndex in 0...index {
-                let innerElement = result[innerIndex]
-                if innerElement > element {
-                    result.swapAt(innerIndex, index)
-                    Thread.sleep(forTimeInterval: 0.01)
-                    onSwap(result)
-                }
-            }
-        }
-    }
-    
-    
+    func updateUI(){
     
 }
 

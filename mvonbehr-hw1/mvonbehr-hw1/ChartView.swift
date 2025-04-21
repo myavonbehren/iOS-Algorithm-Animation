@@ -19,27 +19,21 @@ class ChartView: UIView {
     
     var color : UIColor = .green
     var spacing : CGFloat = 4
-    var heights: [CGFloat] = []
-    var positions: [Int] = []
+    var data: [CGFloat] = []
     
     override func draw(_ rect: CGRect) {
         if let context = UIGraphicsGetCurrentContext( ) {
-            if heights.isEmpty { return }
+            if data.isEmpty { return }
             
-            let barCount = CGFloat(heights.count)
+            let barCount = CGFloat(data.count)
             let totalSpacing = spacing * (barCount - 1)
             let barWidth = (self.frame.width - totalSpacing) / barCount
             
-            let maxHeight = heights.map({$0}).max() ?? 100
             
             context.setFillColor(self.color.cgColor)
 
             
-            for (index, value) in heights.enumerated( ) {
-                let height = heights[index]
-                let position = positions[index]
-                
-                let heightPercentage = height / maxHeight
+            for (index, value) in data.enumerated( ) {
                 let fillHeight = self.frame.height * (value / 100)
                 let xPosition = CGFloat(index) * (barWidth + spacing)
                 
