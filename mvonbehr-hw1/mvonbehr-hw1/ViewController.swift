@@ -48,8 +48,14 @@ class ViewController: UIViewController {
         switch newState {
         case .stopped:
             sortButton.isEnabled = true
+            sizeSegControl.isEnabled = true
+            algorithmPickerTop.isEnabled = true
+            algorithmPickerBottom.isEnabled = true
         case .running:
             sortButton.isEnabled = false
+            sizeSegControl.isEnabled = false
+            algorithmPickerTop.isEnabled = false
+            algorithmPickerBottom.isEnabled = false
             
             self.dispatchQueue.async {
                 let group = DispatchGroup()
