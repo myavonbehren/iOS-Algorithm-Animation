@@ -71,10 +71,11 @@ class ViewController: UIViewController {
                         case 1:
                             self.selectionSort(array: self.topArr, onSwap: topOnSwap)
                         case 2:
-                            var qsArr = self.topArr
-                            self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: topOnSwap)
+                            var quickSortArray = self.topArr
+                            self.quickSort(array: &quickSortArray, low: 0, high: quickSortArray.count - 1, onSwap: topOnSwap)
                         case 3:
-                            self.mergeSort(array: self.topArr, onSwap: topOnSwap)
+                            var mergeSortArr = self.topArr
+                            self.mergeSort(array: &mergeSortArr, low: 0, high: mergeSortArr.count - 1, onSwap: topOnSwap)
                         default: self.insertionSort(array: self.topArr, onSwap: topOnSwap)
                     }
                     
@@ -94,11 +95,12 @@ class ViewController: UIViewController {
                     switch selectedBottom {
                     case 0:
                         self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
-                    case 1:
-                        self.selectionSort(array: self.bottomArr, onSwap: bottomOnSwap)
                     case 2:
-                        var qsArr = self.bottomArr
-                        self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: bottomOnSwap)
+                        var quickSortArray = self.bottomArr
+                        self.quickSort(array: &quickSortArray, low: 0, high: quickSortArray.count - 1, onSwap: bottomOnSwap)
+                    case 3:
+                        var mergeSortArr = self.bottomArr
+                        self.mergeSort(array: &mergeSortArr, low: 0, high: mergeSortArr.count - 1, onSwap: bottomOnSwap)
                     default: self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
                     }
                 
@@ -222,8 +224,15 @@ class ViewController: UIViewController {
         let n1 = mid - low + 1
         let n2 = high - mid
 
-        var left = Array(array[0..<mid])
-        var right =  Array(array[mid..<array.count])
+        var left: [CGFloat] = []
+        var right: [CGFloat] = []
+        
+        for i in 0..<n1 {
+            left.append(array[low + i])
+        }
+        for i in 0..<n2 {
+            right.append(array[mid + 1 + i])
+        }
         
         var i = 0
         var j = 0
@@ -238,7 +247,7 @@ class ViewController: UIViewController {
                 j += 1
             }
             k += 1
-            Thread.sleep(forTimeInterval: 0.1)
+            Thread.sleep(forTimeInterval: 0.05)
             onSwap(array)
         }
         
@@ -246,7 +255,7 @@ class ViewController: UIViewController {
             array[k] = left[i]
             i += 1
             k += 1
-            Thread.sleep(forTimeInterval: 0.1)
+            Thread.sleep(forTimeInterval: 0.05)
             onSwap(array)
         }
         
@@ -254,7 +263,7 @@ class ViewController: UIViewController {
             array[k] = right[j]
             j += 1
             k += 1
-            Thread.sleep(forTimeInterval: 0.1)
+            Thread.sleep(forTimeInterval: 0.05)
             onSwap(array)
         }
     }
@@ -265,7 +274,7 @@ class ViewController: UIViewController {
             
             mergeSort(array: &array, low: low, high: mid, onSwap: onSwap)
             mergeSort(array: &array, low: mid + 1, high: high, onSwap: onSwap)
-            mergeSort(array: &array, low: low, high: high, onSwap: onSwap)
+            merge(array: &array, low: low, high: high, mid: mid, onSwap: onSwap)
         }
         
     }
