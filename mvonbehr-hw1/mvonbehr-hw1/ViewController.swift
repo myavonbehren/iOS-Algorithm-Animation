@@ -217,22 +217,46 @@ class ViewController: UIViewController {
         }
     }
     
-    func merge(left: [CGFloat],  right: [CGFloat], onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
-        var result: [CGFloat] = []
-        var left = left
-        var right = right
+    func merge(array: inout [CGFloat], low: Int,  high: Int, mid: Int, onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
         
-        while left.count > 0 && right.count > 0 {
-            if left[0] < right[0] {
-                result.append(left.removeFirst())
+        let n1 = mid - low + 1
+        let n2 = high - mid
+
+        var left = Array(array[0..<mid])
+        var right =  Array(array[mid..<array.count])
+        
+        var i = 0
+        var j = 0
+        var k = low
+        
+        while i < n1 && j < n2 {
+            if left[i] <= right[j] {
+                array[k] = left[i]
+                i += 1
             } else {
-                result.append(right.removeFirst())
+                array[k] = right[j]
+                j += 1
             }
+            k += 1
             Thread.sleep(forTimeInterval: 0.1)
-            onSwap(result)
+            onSwap(array)
         }
-        return result + left + right
         
+        while (i < n1) {
+            array[k] = left[i]
+            i += 1
+            k += 1
+            Thread.sleep(forTimeInterval: 0.1)
+            onSwap(array)
+        }
+        
+        while (j < n2) {
+            array[k] = right[j]
+            j += 1
+            k += 1
+            Thread.sleep(forTimeInterval: 0.1)
+            onSwap(array)
+        }
     }
     
     func mergeSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
