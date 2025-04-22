@@ -16,10 +16,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var algorithmPickerTop: UISegmentedControl!
     @IBOutlet weak var algorithmPickerBottom: UISegmentedControl!
     
-    var queue: DispatchQueue = DispatchQueue(label: "sort", qos: .background)
+    private var dispatchQueue: DispatchQueue = DispatchQueue(label: "background", qos: .background)
+    private var queue1: DispatchQueue = DispatchQueue(label: "queue-1", qos: .userInteractive)
+    private var queue2: DispatchQueue = DispatchQueue(label: "queue-2", qos: .userInteractive)
+    
+    // worker threads
+    // qos userInteractive
     
     var topArr: [CGFloat] = []
     var bottomArr: [CGFloat] = []
+    
+    enum ViewState {
+        case stopped
+        case running
+    }
     
   
     override func viewDidLoad() {
@@ -29,6 +39,9 @@ class ViewController: UIViewController {
         sizeSegmentChanged(sizeSegControl)
     }
     
+    // lecture 2
+    // two different threads
+    // async
     
     @IBAction func sizeSegmentChanged(_ sender: UISegmentedControl) {
         let size: Int
@@ -75,7 +88,6 @@ class ViewController: UIViewController {
         bottomChartView.setNeedsDisplay()
         
         queue.async {
-            
             let topOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
                 self.topArr = updatedArray
                 let normalizedArray = updatedArray.map { $0 / maxPossibleValueTop * 100 }
@@ -83,6 +95,7 @@ class ViewController: UIViewController {
                 self.topchartView.setNeedsDisplay()
                 }
             }
+            
             
             switch selectedTop {
                 case 0:
@@ -118,6 +131,12 @@ class ViewController: UIViewController {
         sortButton.isEnabled = true
         
         
+        
+    }
+    
+    
+    
+    private func handle(_ newState: ViewState) {
         
     }
     
