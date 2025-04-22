@@ -217,7 +217,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func merge(array: inout [CGFloat], low: Int,  high: Int, mid: Int, onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
+    func merge(array: inout [CGFloat], low: Int,  high: Int, mid: Int, onSwap: (([CGFloat]) -> Void)) {
         
         let n1 = mid - low + 1
         let n2 = high - mid
@@ -259,14 +259,15 @@ class ViewController: UIViewController {
         }
     }
     
-    func mergeSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
-        guard array.count > 1 else { return array }
+    func mergeSort(array: inout [CGFloat], low: Int, high: Int, onSwap: (([CGFloat]) -> Void)) {
+        if (low < high) {
+            let mid = low + (high - low) / 2
+            
+            mergeSort(array: &array, low: low, high: mid, onSwap: onSwap)
+            mergeSort(array: &array, low: mid + 1, high: high, onSwap: onSwap)
+            mergeSort(array: &array, low: low, high: high, onSwap: onSwap)
+        }
         
-        let mid = array.count / 2
-        
-        let left = Array(array[0..<mid])
-        let right = Array(array[mid..<array.count])
-        return merge(left: left, right: right, onSwap: onSwap)
     }
     
     
