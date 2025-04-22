@@ -20,9 +20,6 @@ class ViewController: UIViewController {
     private var queue1: DispatchQueue = DispatchQueue(label: "queue-1", qos: .userInteractive)
     private var queue2: DispatchQueue = DispatchQueue(label: "queue-2", qos: .userInteractive)
     
-    // worker threads
-    // qos userInteractive
-    
     var topArr: [CGFloat] = []
     var bottomArr: [CGFloat] = []
     
@@ -31,6 +28,11 @@ class ViewController: UIViewController {
         case running
     }
     
+    var state: ViewState = .stopped {
+        didSet {
+            self.handle(state)
+        }
+    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,45 @@ class ViewController: UIViewController {
         sizeSegmentChanged(sizeSegControl)
     }
     
-    // lecture 2
-    // two different threads
-    // async
+    private func handle(_ newState: ViewState) {
+        switch newState {
+        case .stopped:
+            sortButton.isEnabled = true
+        case .running:
+            sortButton.isEnabled = false
+            
+            self.dispatchQueue.async {
+                let group = DispatchGroup()
+                
+                group.enter()
+                self.queue1.async {
+                    
+                    
+                    
+                    group.leave()
+                }
+                
+                group.enter()
+                self.queue2.async {
+                    
+                    
+                    
+                    
+                    group.leave()
+                }
+                group.wait()
+                DispatchQueue.main.async {
+                    self.state = .stopped
+                }
+                
+            }
+            
+            
+            
+            
+            
+        }
+    }
     
     @IBAction func sizeSegmentChanged(_ sender: UISegmentedControl) {
         let size: Int
@@ -70,8 +108,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func sort(_ sender: UIButton) {
-        sortButton.isEnabled = false
-        
         let selectedTop = algorithmPickerTop.selectedSegmentIndex
         let selectedBottom = algorithmPickerBottom.selectedSegmentIndex
         
@@ -87,7 +123,7 @@ class ViewController: UIViewController {
         bottomChartView.data = normalizedBottomArr
         bottomChartView.setNeedsDisplay()
         
-        queue.async {
+        queue1.async {
             let topOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
                 self.topArr = updatedArray
                 let normalizedArray = updatedArray.map { $0 / maxPossibleValueTop * 100 }
@@ -95,7 +131,6 @@ class ViewController: UIViewController {
                 self.topchartView.setNeedsDisplay()
                 }
             }
-            
             
             switch selectedTop {
                 case 0:
@@ -128,19 +163,9 @@ class ViewController: UIViewController {
             }
             
         }
-        sortButton.isEnabled = true
-        
-        
-        
     }
     
-    
-    
-    private func handle(_ newState: ViewState) {
-        
-    }
-    
-
+    // Sorting Algorithms
      func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
          var result = array
              
