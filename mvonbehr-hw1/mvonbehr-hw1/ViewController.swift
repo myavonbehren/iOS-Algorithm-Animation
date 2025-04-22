@@ -42,6 +42,9 @@ class ViewController: UIViewController {
     }
     
     private func handle(_ newState: ViewState) {
+        let selectedTop = algorithmPickerTop.selectedSegmentIndex
+        let selectedBottom = algorithmPickerBottom.selectedSegmentIndex
+        
         switch newState {
         case .stopped:
             sortButton.isEnabled = true
@@ -51,33 +54,62 @@ class ViewController: UIViewController {
             self.dispatchQueue.async {
                 let group = DispatchGroup()
                 
+                // Top Array
                 group.enter()
                 self.queue1.async {
                     
+                    let topOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
+                        self.topArr = updatedArray
+                        self.topchartView.data = self.setBarData(self.topArr)
+                        self.topchartView.setNeedsDisplay()
+                        }
+                    }
                     
+                    switch selectedTop {
+                        case 0:
+                            self.insertionSort(array: self.topArr, onSwap: topOnSwap)
+                        case 1:
+                            self.selectionSort(array: self.topArr, onSwap: topOnSwap)
+                        case 2:
+                            var qsArr = self.topArr
+                            self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: topOnSwap)
+                        case 3:
+                            self.mergeSort(array: self.topArr, onSwap: topOnSwap)
+                        default: self.insertionSort(array: self.topArr, onSwap: topOnSwap)
+                    }
                     
                     group.leave()
                 }
                 
+                // Bottom Array
                 group.enter()
                 self.queue2.async {
+                    let bottomOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
+                        self.bottomArr = updatedArray
+                        self.bottomChartView.data = self.setBarData(self.bottomArr)
+                        self.bottomChartView.setNeedsDisplay()
+                        }
+                    }
                     
-                    
-                    
-                    
+                    switch selectedBottom {
+                    case 0:
+                        self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+                    case 1:
+                        self.selectionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+                    case 2:
+                        var qsArr = self.bottomArr
+                        self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: bottomOnSwap)
+                    default: self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
+                    }
+                
                     group.leave()
                 }
                 group.wait()
+                
                 DispatchQueue.main.async {
                     self.state = .stopped
                 }
-                
             }
-            
-            
-            
-            
-            
         }
     }
     
@@ -102,68 +134,20 @@ class ViewController: UIViewController {
     }
     
     func setBarData(_ data: [CGFloat]) -> [CGFloat] {
-        let maxValue = data.max() ?? 100
+        let maxValue = CGFloat(data.count)
         return data.map { $0 / maxValue * 100 }
     }
     
     
     @IBAction func sort(_ sender: UIButton) {
-        let selectedTop = algorithmPickerTop.selectedSegmentIndex
-        let selectedBottom = algorithmPickerBottom.selectedSegmentIndex
-        
-        let maxPossibleValueBottom = CGFloat(bottomArr.count)
-        let maxPossibleValueTop = CGFloat(topArr.count)
-        
-        let normalizedTopArr = topArr.map { $0 / maxPossibleValueTop * 100 }
-        let normalizedBottomArr = bottomArr.map { $0 / maxPossibleValueBottom * 100 }
-        
-        topchartView.data = normalizedTopArr
-        topchartView.setNeedsDisplay()
-        
-        bottomChartView.data = normalizedBottomArr
-        bottomChartView.setNeedsDisplay()
-        
-        queue1.async {
-            let topOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
-                self.topArr = updatedArray
-                let normalizedArray = updatedArray.map { $0 / maxPossibleValueTop * 100 }
-                self.topchartView.data = normalizedArray
-                self.topchartView.setNeedsDisplay()
-                }
-            }
-            
-            switch selectedTop {
-                case 0:
-                    self.insertionSort(array: self.topArr, onSwap: topOnSwap)
-                case 1:
-                    self.selectionSort(array: self.topArr, onSwap: topOnSwap)
-                case 2:
-                    var qsArr = self.topArr
-                    self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: topOnSwap)
-                default: self.insertionSort(array: self.topArr, onSwap: topOnSwap)
-            }
-            
-            let bottomOnSwap: ([CGFloat]) -> Void = { updatedArray in DispatchQueue.main.async {
-                self.bottomArr = updatedArray
-                let normalizedArray = updatedArray.map { $0 / maxPossibleValueBottom * 100 }
-                self.bottomChartView.data = normalizedArray
-                self.bottomChartView.setNeedsDisplay()
-                }
-            }
-            
-            switch selectedBottom {
-            case 0:
-                self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
-            case 1:
-                self.selectionSort(array: self.bottomArr, onSwap: bottomOnSwap)
-            case 2:
-                var qsArr = self.bottomArr
-                self.quickSort(array: &qsArr, low: 0, high: qsArr.count - 1, onSwap: bottomOnSwap)
-            default: self.insertionSort(array: self.bottomArr, onSwap: bottomOnSwap)
-            }
-            
+        switch self.state {
+        case .stopped:
+            self.state = .running
+        case .running:
+            self.state = .stopped
         }
     }
+    
     
     // Sorting Algorithms
      func insertionSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
@@ -233,48 +217,34 @@ class ViewController: UIViewController {
         }
     }
     
-    func mergeSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) {
+    func merge(left: [CGFloat],  right: [CGFloat], onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
+        var result: [CGFloat] = []
+        var left = left
+        var right = right
+        
+        while left.count > 0 && right.count > 0 {
+            if left[0] < right[0] {
+                result.append(left.removeFirst())
+            } else {
+                result.append(right.removeFirst())
+            }
+            Thread.sleep(forTimeInterval: 0.1)
+            onSwap(result)
+        }
+        return result + left + right
         
     }
     
-    /*
-     def mergeSort(array):
-         if len(array) > 1:
-
-             #  r is the point where the array is divided into two subarrays
-             r = len(array)//2
-             L = array[:r]
-             M = array[r:]
-
-             # Sort the two halves
-             mergeSort(L)
-             mergeSort(M)
-
-             i = j = k = 0
-
-             # Until we reach either end of either L or M, pick larger among
-             # elements L and M and place them in the correct position at A[p..r]
-             while i < len(L) and j < len(M):
-                 if L[i] < M[j]:
-                     array[k] = L[i]
-                     i += 1
-                 else:
-                     array[k] = M[j]
-                     j += 1
-                 k += 1
-
-             # When we run out of elements in either L or M,
-             # pick up the remaining elements and put in A[p..r]
-             while i < len(L):
-                 array[k] = L[i]
-                 i += 1
-                 k += 1
-
-             while j < len(M):
-                 array[k] = M[j]
-                 j += 1
-                 k += 1
-     */
+    func mergeSort(array: [CGFloat], onSwap: (([CGFloat]) -> Void)) -> [CGFloat] {
+        guard array.count > 1 else { return array }
+        
+        let mid = array.count / 2
+        
+        let left = Array(array[0..<mid])
+        let right = Array(array[mid..<array.count])
+        return merge(left: left, right: right, onSwap: onSwap)
+    }
+    
     
     
     
